@@ -7,12 +7,19 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { ItemsService } from '../items-service.service';
 import { FormBuilder } from '@angular/forms';
-import Item from '../types/Item';
 
 @Component({
   selector: 'app-additem',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule,MatButtonModule, MatDividerModule, MatIconModule, ReactiveFormsModule],
+  imports: [
+    FormsModule, 
+    MatFormFieldModule, 
+    MatInputModule,
+    MatButtonModule, 
+    MatDividerModule, 
+    MatIconModule, 
+    ReactiveFormsModule
+  ],
   templateUrl: './additem.component.html',
   styleUrl: './additem.component.css'
 })
@@ -23,7 +30,7 @@ export class AdditemComponent {
     quantity: [0, Validators.required],
     description: ['', Validators.required],
     url: ['', Validators.required]
-  });;
+  });
   constructor(private itemService: ItemsService, private formBuilder: FormBuilder){}
 
   // anotherItem: FormGroup = this.item;
